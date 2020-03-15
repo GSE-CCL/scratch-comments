@@ -2,8 +2,6 @@ import argparse
 import json
 import os
 import requests
-# import io
-# import zipfile
 from bs4 import BeautifulSoup
 
 COMMENTS_URL = "https://scratch.mit.edu/site-api/comments/project/{0}/?page={1}"
@@ -59,6 +57,7 @@ def download_page(id_set, output_directory=os.getcwd(), file_name=None):
     print(master_comments, master_count)
     return (master_comments, master_count)
 
+# Downloads comments for the given project ID and page number
 def download_comments(id_set, page, output_directory=os.getcwd(), file_name=None):
     comments = []
     comment_count = 0
